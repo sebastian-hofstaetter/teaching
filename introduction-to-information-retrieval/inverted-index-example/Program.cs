@@ -16,21 +16,22 @@ class Program
     {
         var stopwatch = Stopwatch.StartNew();
 
-        //var index = new InvertedIndex();
         var index = new InvertedIndexFaster();
+        var totalTokens = 0;
 
         for (var i = 0; i < 3_000; i++)
         {
             var documentId = "doc-" + i;
             var content = File.ReadAllText("lincoln-wiki-entry.txt");
             var tokens = content.Split(' ');
-            
+
             foreach (var token in tokens)
             {
                 index.AddTerm(token, documentId);
+                totalTokens++;
             }
         }
 
-        Console.WriteLine($"Elapsed: {stopwatch.Elapsed}");
+        Console.WriteLine($"Elapsed: {stopwatch.Elapsed} for {totalTokens} tokens");
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 /// <summary>
-/// Imporved sample inverted index: this is still not best practice, but at least some things are improved 
+/// Improved sample inverted index: this is still not best practice, but at least some things are improved 
 /// </summary>
 public class InvertedIndexFaster
 {
@@ -19,7 +19,7 @@ public class InvertedIndexFaster
         var contains = PostingLists.TryGetValue(term, out var postingList); // combine contains check and get object reference 
         if (contains)
         {
-            var lastElement = postingList[postingList.Count - 1]; // jump to last element with known length instead of linq method
+            var lastElement = postingList[postingList.Count - 1]; // jump to last element with known length instead of LINQ method
             if (lastElement.document == document)
             {
                 postingList[postingList.Count - 1] = (lastElement.document, lastElement.frequency + 1); // this does not allocate anything, we just have to write the tuple in one piece to the array
