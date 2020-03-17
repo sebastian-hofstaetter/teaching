@@ -12,7 +12,7 @@ The first challenge is that we want a fast answer over a set of many (million, b
 	
 	"Find the needle in the haystack!"
 	
-For now lets assume we deal with a static set (collection) of text documents. And the documents only have on body field that we want to search in. 
+For now lets assume we deal with a static set (collection) of text documents. And the documents only have one field that we want to search in. 
 
 The next challenge: How can an algorithm decide/describe/model this relevance? E.g. Does a document satisfy the information need of the user and does it help complete the user’s task?
 
@@ -32,7 +32,7 @@ The inverted index is built up document per document: Each document's metadata i
 
 ## Search
 
-Now that we have created our index we want to use it to search for documents! Now the challenges we talked about in the motivation and the inverted index data structure really come together 🙂. Given a query, we run it trough the same pipeline as the documents during the index to get a list of tokens, then we retrieve the statistics (e.g. posting lists) for these tokens and compute a score for each document that is in the posting lists via a scoring model. Now we have a sortable list of document ids and scores. We sort it by the score value to get the most relevant documents. Now we can either leave it at that and return the user just the document ids or we can for example read the documents and display the users the contents. We can then build functionality on top of that: snippets, highlighting, paging etc.. 
+Now that we have created our index we want to use it to search for documents! Now the challenges we talked about in the motivation and the inverted index data structure really come together 🙂. Given a query, we run it through the same pipeline as the documents during the index creation to get a list of tokens, then we retrieve the statistics (e.g. posting lists) for these tokens and compute a score for each document that is in the posting lists via a scoring model. Now we have a sortable list of document ids and scores. We sort it by the score value to get the most relevant documents. Now we can either leave it at that and return the user just the document ids or we can for example read the documents and display the contents to the users. We can then build functionality on top of that: snippets, highlighting, paging etc.. 
 
 
 ### Dictionary data structures
@@ -44,8 +44,8 @@ Dictionary data structure used by Lucene (and subsequently used by Solr + Elasti
 
 Additional readings:
 
-FSTs in Lucene by Lucene committer Michael McCandless http://blog.mikemccandless.com/2010/12/using-finite-state-transducers-in.html
+- FSTs in Lucene by Lucene committer Michael McCandless http://blog.mikemccandless.com/2010/12/using-finite-state-transducers-in.html
 
-Code documentation: https://lucene.apache.org/core/7_5_0/core/org/apache/lucene/util/fst/package-summary.html
+- Code documentation: https://lucene.apache.org/core/7_5_0/core/org/apache/lucene/util/fst/package-summary.html
 
-Examples using Lucene's FST (Automata) by Doug Turnbull https://opensourceconnections.com/blog/2013/02/21/lucene-4-finite-state-automaton-in-10-minutes-intro-tutorial/
+- Examples using Lucene's FST (Automata) by Doug Turnbull https://opensourceconnections.com/blog/2013/02/21/lucene-4-finite-state-automaton-in-10-minutes-intro-tutorial/
