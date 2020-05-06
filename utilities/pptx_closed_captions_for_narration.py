@@ -9,6 +9,7 @@ import sys
 sys.path.append(os.getcwd())
 import copy
 import time
+import datetime
 
 from pptx import Presentation
 from collections import OrderedDict
@@ -30,7 +31,6 @@ pp = Presentation(args.in_file)
 closed_captions = OrderedDict()
 
 run_all_slides = args.slide_numbers is None
-
 for i,slide in enumerate(pp.slides):
 
     if not run_all_slides:
@@ -129,16 +129,19 @@ for i,slide in enumerate(pp.slides):
             #slide.notes_slide.notes_text_frame.text = "[Auto-generated CC] " + recognized_results
             closed_captions[i] = (title, recognized_results, track_duration)
 
-with open(args.out_file_notes,"w") as markdown_writer:
+
+with open(args.out_file_notes,"w",encoding="utf8") as markdown_writer:
 
     markdown_writer.write("# "+os.path.splitext(os.path.basename(args.in_file))[0]+"\n\n")
     markdown_writer.write("*Automatic closed captions generated with the Azure Speech API*\n\n")
 
     durations=[]
-
+    print("Slide-Setlist: ")
     for slide,(title,cc_text,track_duration) in closed_captions.items():
         markdown_writer.write("### **"+ str(slide+1)+"** "+title+"\n")
         markdown_writer.write(cc_text+"\n\n*" + str(round(track_duration,2)) +" seconds*\n\n")
+
+        print(str(datetime.timedelta(seconds=round(sum(durations),0)))+" "+str(slide+1)+" - " + title)
         durations.append(track_duration)
 
     if len(durations) > 1:
