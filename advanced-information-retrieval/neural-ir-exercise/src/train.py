@@ -40,11 +40,11 @@ word_embedder = BasicTextFieldEmbedder({"tokens": tokens_embedder})
 
 # recommended default params for the models (but you may change them if you want)
 if config["model"] == "knrm":
-    model = KNRM(word_embedder, n_kernels=11)
+    model = KNRM(word_embedder, n_kernels=11).cuda()
 elif config["model"] == "conv_knrm":
-    model = Conv_KNRM(word_embedder, n_grams=3, n_kernels=11, conv_out_dim=128)
+    model = Conv_KNRM(word_embedder, n_grams=3, n_kernels=11, conv_out_dim=128).cuda()
 elif config["model"] == "match_pyramid":
-    model = MatchPyramid(word_embedder, conv_output_size=[16,16,16,16,16], conv_kernel_size=[[3,3],[3,3],[3,3],[3,3],[3,3]], adaptive_pooling_size=[[36,90],[18,60],[9,30],[6,20],[3,10]])
+    model = MatchPyramid(word_embedder, conv_output_size=[16,16,16,16,16], conv_kernel_size=[[3,3],[3,3],[3,3],[3,3],[3,3]], adaptive_pooling_size=[[36,90],[18,60],[9,30],[6,20],[3,10]]).cuda()
 
 
 # todo optimizer, loss 
