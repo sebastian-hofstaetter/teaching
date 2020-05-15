@@ -21,8 +21,8 @@ class KNRM(nn.Module):
         self.word_embeddings = word_embeddings
 
         # static - kernel size & magnitude variables
-        self.mu = Variable(torch.FloatTensor(self.kernel_mus(n_kernels)), requires_grad=False).view(1, 1, 1, n_kernels)
-        self.sigma = Variable(torch.FloatTensor(self.kernel_sigmas(n_kernels)), requires_grad=False).view(1, 1, 1, n_kernels)
+        self.mu = Variable(torch.FloatTensor(self.kernel_mus(n_kernels)).cuda(), requires_grad=False).view(1, 1, 1, n_kernels)
+        self.sigma = Variable(torch.FloatTensor(self.kernel_sigmas(n_kernels)).cuda(), requires_grad=False).view(1, 1, 1, n_kernels)
 
         #todo
 
