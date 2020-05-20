@@ -71,7 +71,8 @@ for epoch in range(2):
 
 
 #
-# eval (duplicate for validation inside train loop)
+# eval (duplicate for validation inside train loop - but rename "_iterator", since
+# otherwise it will overwrite the original train iterator, which is instantiated outside the loop)
 #
 
 _tuple_loader = IrLabeledTupleDatasetReader(lazy=True, max_doc_length=180, max_query_length=30) # not spacy tokenized already (default is spacy)
