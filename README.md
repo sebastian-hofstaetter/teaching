@@ -18,8 +18,8 @@ Information Retrieval is the science behind search technology. Certainly, the mo
 
 In the following we provide links to recordings, slides, and closed captions for our lectures. (Continuously adding more throughout the semester March-June 2021)
 
-| Topic                  | Description                                                                     | Recorded Lecture  | PDF Slides  | Automatic CC  |
+| Topic                  | Description                                                                     | Recorded&nbsp;Lecture  | PDF&nbsp;Slides  | Automatic&nbsp;CC  |
 | -------------          | -------------                                                                   |-------------                 | -----       | -----         |
-| 0: Introduction        | Infos on requirements, topics, organization                                     | [YouTube](https://youtu.be/6FNISntK6Sk) | [PDF](advanced-information-retrieval/Lecture&#32;0&#32;-&#32;Course&#32;Introduction.pdf)            | [GitHub](advanced-information-retrieval/Lecture&#32;0&#32;-&#32;Closed&#32;Captions.md)            |
-| 1: IR Fundamentals     | We explore two fundamental building blocks of IR: indexing and ranked retrieval |                              |             | --            |
+| 0:&nbsp;Introduction        | Infos on requirements, topics, organization                                     | [YouTube](https://youtu.be/6FNISntK6Sk) | [PDF](advanced-information-retrieval/Lecture&#32;0&#32;-&#32;Course&#32;Introduction.pdf)            | [GitHub](advanced-information-retrieval/Lecture&#32;0&#32;-&#32;Closed&#32;Captions.md)            |
+| 1:&nbsp;IR&nbsp;Fundamentals     | We explore two fundamental building blocks of IR: indexing and ranked retrieval |                              |             | --            |
 
