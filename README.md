@@ -16,3 +16,10 @@ Information Retrieval is the science behind search technology. Certainly, the mo
 ![Syllabus](advanced-information-retrieval/air-syllabus.png)
 *The AIR'21 syllabus overview*
 
+In the following we provide links to recordings, slides, and closed captions for our lectures. (Continuously adding more throughout the semester March-June 2021)
+
+| Topic                  | Description                                                                     | Recorded Lecture on Youtube  | PDF Slides  | Automatic CC  |
+| -------------          | -------------                                                                   |-------------                 | -----       | -----         |
+| 0: Introduction        | Infos on requirements, topics, organization                                     |                              |             | --            |
+| 1: IR Fundamentals     | We explore two fundamental building blocks of IR: indexing and ranked retrieval |                              |             | --            |
+
