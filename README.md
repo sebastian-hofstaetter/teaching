@@ -20,6 +20,6 @@ In the following we provide links to recordings, slides, and closed captions for
 
 | Topic                  | Description                                                                     | Recorded Lecture on Youtube  | PDF Slides  | Automatic CC  |
 | -------------          | -------------                                                                   |-------------                 | -----       | -----         |
-| 0: Introduction        | Infos on requirements, topics, organization                                     |                              |             | --            |
+| 0: Introduction        | Infos on requirements, topics, organization                                     | https://youtu.be/6FNISntK6Sk | [PDF](advanced-information-retrieval/Lecture 0 - Course Introduction.pdf)            | [PDF](advanced-information-retrieval/Lecture 0 - Closed Captions.md)            |
 | 1: IR Fundamentals     | We explore two fundamental building blocks of IR: indexing and ranked retrieval |                              |             | --            |
 
