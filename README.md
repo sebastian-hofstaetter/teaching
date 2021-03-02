@@ -2,7 +2,7 @@
 
 I'm working on two Information Retrieval courses at the Vienna University of Technology (TU Wien), mainly focusing on the master-level Advanced Information Retrieval course. I try to create engaging, fun, and invormative lectures and exercises. 
 
-- The **Introdcution to Information Retrieval** course focuses on IR basics and engineering skills of the students.
+- The **Introduction to Information Retrieval** course focuses on IR basics and engineering skills of the students.
 - The **Advanced Information Retrieval** course focuses on machine learning & neural IR techniques and tries to follow the state-of-the-art in IR research.
 
 *Please feel free to open up an issue or a pull request if you want to add something, find a mistake, or think something should be explained better!*
