@@ -31,10 +31,15 @@ pp = Presentation(args.in_file)
 closed_captions = OrderedDict()
 
 run_all_slides = args.slide_numbers is None
-for i,slide in enumerate(pp.slides):
+slide_number = 0
+for slide in pp.slides:
+
+    # skip hidden slides
+    if slide._element.get('show') != None and slide._element.get('show') == "0":
+        continue
 
     if not run_all_slides:
-        if i not in args.slide_numbers:
+        if slide_number not in args.slide_numbers:
             continue
 
     # hacky way of getting the title 
@@ -47,13 +52,18 @@ for i,slide in enumerate(pp.slides):
             all_text += shape.text + " "
 
     words = [word for word in all_text.split() if word.isalpha()]
+    # only lowercase a word if its not an acronym with multiple uppercases
+    for t,w in enumerate(words):
+        sum_uppercase = sum((1 for c in w if c.isupper()))
+        if sum_uppercase == 1:
+            words[t] = w.lower()
     word_set = list(set(words))
 
     bi_grams = list(set([word+" "+ words[i+1] for i, word in enumerate(words[:-1])]))
     tri_grams = list(set([word+" "+ words[i+1]+" "+ words[i+2] for i, word in enumerate(words[:-2])]))
 
     # audio is stored in related_parts
-    print("Slide",i+1)
+    print("Slide",slide_number+1)
     known_parts = set() 
     for id_, rel in copy.deepcopy(slide.part.related_parts).items():
         if rel.content_type == "audio/mp4" and rel.partname not in known_parts:
@@ -83,6 +93,7 @@ for i,slide in enumerate(pp.slides):
             speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
             # doesn't seem to be working at the moment ... maybe time will improve it 
+            # update 2021: yes it does work now :) 
             phrase_list_grammar = speechsdk.PhraseListGrammar.from_recognizer(speech_recognizer)
             for phrase in (word_set+bi_grams+tri_grams):
                 phrase_list_grammar.addPhrase(phrase)
@@ -127,8 +138,8 @@ for i,slide in enumerate(pp.slides):
             
             # adding notes breaks powerpoint print to notes ... needs fix
             #slide.notes_slide.notes_text_frame.text = "[Auto-generated CC] " + recognized_results
-            closed_captions[i] = (title, recognized_results, track_duration)
-
+            closed_captions[slide_number] = (title, recognized_results, track_duration)
+            slide_number += 1
 
 with open(args.out_file_notes,"w",encoding="utf8") as markdown_writer:
 
