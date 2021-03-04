@@ -53,12 +53,12 @@ And to create this inverted index, we process documents in a simple pipeline. So
 *101.01 seconds*
 
 ### **11** Tokenization 
-Let's look at each of these steps in a bit more detail, starting with tokenization. A very naïve baseline just splits on each whitespace and punctuation character. So for example, if you have something like U.S.A, you would split that into three different terms, U, S and A. Or if you have a date, you will also split that date into something that would be hard to recognize if you search for that exact date. However, even though we find those examples that are not the best showcase, is still a very strong baseline for the English language, and an improvement on top of that would be for example to keep abbreviations names and numbers together as one token. For example, the open source tool from Stanford that creates an tokenization which can also handle emoji characters, which are surprisingly hard to be aware of. 
+Let's look at each of these steps in a bit more details, starting with tokenization. A very naïve baseline just splits on each whitespace and punctuation character. So for example, if you have something like U.S.A, you would split that into three different terms, U, S and A. Or if you have a date, you will also split that date into something that would be hard to recognize if you search for that exact date. However, even though we find those examples that are not the best showcase, is still a very strong baseline for the English language, and an improvement on top of that would be for example to keep abbreviations names and numbers together as one token. For example, the open source tool from Stanford that creates a tokenization which can also handle emoji characters, which are surprisingly hard to be aware of. 
 
 *76.21 seconds*
 
 ### **12** Stemming 
-The next point is stemming. Here we reduce the terms to their roots and we just chop off the end of a term. This of course is language dependent and does not work equally well across languages, but again, for English it's a pretty good baseline. In more advanced form is so called lemmatization, where we keep a dictionary to reduce variant forms to their base form. So for example am,are,is  all reduced to be. Computationally, this of course is more expensive than have a simple rule based chopping off the end. 
+The next point is stemming. Here we reduce the terms to their roots and we just chop off the end of a term. This of course is language dependent and does not work equally well across languages, but again, for English it's a pretty good baseline. In more advanced form is so called lemmatization, where we keep a dictionary to reduce variant forms to their base form. So for example "am,are,is" all reduce to "be". Computationally, this of course is more expensive than have a simple rule based chopping off the end. 
 
 *58.21 seconds*
 
