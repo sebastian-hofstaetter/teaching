@@ -1,0 +1,5 @@
+allennlp==1.2.2
+blingfire==0.0.9
+PyYAML==5.3.1
+torch==1.6.0
+transformers==3.5.1

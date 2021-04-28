@@ -1,20 +1,31 @@
 # based on: https://github.com/allenai/allennlp/blob/master/allennlp/data/dataset_readers/seq2seq.py
 
-from typing import Dict
+from typing import Dict,List
 import logging
 
 from overrides import overrides
+from blingfire import *
 
 from allennlp.common.checks import ConfigurationError
 from allennlp.common.file_utils import cached_path
-from allennlp.common.util import START_SYMBOL, END_SYMBOL
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
-from allennlp.data.fields import TextField,LabelField
+from allennlp.data.fields import TextField,MetadataField
 from allennlp.data.instance import Instance
-from allennlp.data.tokenizers import Token, Tokenizer, WordTokenizer
+from allennlp.data.tokenizers import Tokenizer
 from allennlp.data.token_indexers import TokenIndexer, SingleIdTokenIndexer
-from allennlp.data.tokenizers.word_splitter import SimpleWordSplitter
+from allennlp.data.tokenizers.token import Token
+
 logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
+
+
+class BlingFireTokenizer():
+    """
+    basic tokenizer using bling fire library
+    """
+
+    def tokenize(self, sentence: str) -> List[Token]:
+        return [Token(t) for t in text_to_words(sentence).split()]
+
 
 class IrTripleDatasetReader(DatasetReader):
     """
@@ -34,7 +45,7 @@ class IrTripleDatasetReader(DatasetReader):
                  max_query_length:int = -1,
                  lazy: bool = False) -> None:
         super().__init__(lazy)
-        self._tokenizer = tokenizer or WordTokenizer() # little bit faster, useful for multicore proc. word_splitter=SimpleWordSplitter()
+        self._tokenizer = tokenizer or BlingFireTokenizer()
         self._token_indexers = token_indexers or {"tokens": SingleIdTokenIndexer(lowercase_tokens=True)}
         self._source_add_start_token = source_add_start_token
         self.max_doc_length = max_doc_length
@@ -102,7 +113,7 @@ class IrLabeledTupleDatasetReader(DatasetReader):
                  max_query_length:int = -1,
                  lazy: bool = False) -> None:
         super().__init__(lazy)
-        self._tokenizer = tokenizer or WordTokenizer() # little bit faster, useful for multicore proc. word_splitter=SimpleWordSplitter()
+        self._tokenizer = tokenizer or BlingFireTokenizer()
         self._token_indexers = token_indexers or {"tokens": SingleIdTokenIndexer(lowercase_tokens=True)}
         self._source_add_start_token = source_add_start_token
         self.max_doc_length = max_doc_length
@@ -128,8 +139,8 @@ class IrLabeledTupleDatasetReader(DatasetReader):
     def text_to_instance(self, query_id:str, doc_id:str, query_sequence: str, doc_sequence: str) -> Instance:  # type: ignore
         # pylint: disable=arguments-differ
 
-        query_id_field = LabelField(int(query_id), skip_indexing=True)
-        doc_id_field = LabelField(int(doc_id), skip_indexing=True)
+        query_id_field = MetadataField(query_id)
+        doc_id_field = MetadataField(doc_id)
 
         query_tokenized = self._tokenizer.tokenize(query_sequence)
         if self.max_query_length > -1:
