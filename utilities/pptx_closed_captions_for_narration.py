@@ -40,6 +40,7 @@ for slide in pp.slides:
 
     if not run_all_slides:
         if slide_number not in args.slide_numbers:
+            slide_number += 1
             continue
 
     # hacky way of getting the title 
