@@ -18,7 +18,7 @@ Information Retrieval is the science behind search technology. Certainly, the mo
 
 ### Lectures
 
-In the following we provide links to recordings, slides, and closed captions for our lectures. (Continuously adding more throughout the semester March-June 2021)
+In the following we provide links to recordings, slides, and closed captions for our lectures. Here is a complete playlist [on YouTube](https://www.youtube.com/playlist?list=PLSg1mducmHTPZPDoal4m59pPxxsceXF-y).
 
 | Topic                  | Description                                                                     | Recordings  | Slides  | Text  |
 | -------------          | -------------                                                                   |-------------                 | -----       | -----         |
