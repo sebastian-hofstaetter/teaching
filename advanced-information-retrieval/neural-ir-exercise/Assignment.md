@@ -18,7 +18,7 @@ Implement 3 neural architectures based on the kernel-pooling paradigm to perform
     - Including early stopping based on the validation set
 - Evaluate: Compute a test set evaluation at the end
 	- MS-MARCO Sparse Labels **5 points**
-	- FiRA fine-grained Labels **5 points**
+	- FiRA fine-grained Labels (use the fira.qrels.retrieval.tsv labels on the msmarco validation & test input tuple files, they share the same input data) **5 points**
 	
 ## Part 2 - Extractive QA **30 points**
 
