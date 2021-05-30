@@ -48,7 +48,7 @@ I have mentioned the BERT DOT model before in the previous slides. But now let's
 *96.41 seconds*
 
 ### **10** BERT DOT 
-Formalized is thr BERT DOT model as follows, so we have a separate encoding of query and passage. This can be done independently and we feed each sequence with the CLS token into the BERT model and then we pool the first vector output, so the CLS vector gets taken and we ignore the rest of the output. And then in the matching, which can be done outside the model, so inside a nearest neighbor library for example, we have a simple dot product between the query encoded vector and the passage encoding vector. Optionally we can also compress those two vectors with a single linear layer in the encoding stage to reduce the dimensionality of the model after the BERT computation is finished. 
+Formalized is the BERT DOT model as follows, so we have a separate encoding of query and passage. This can be done independently and we feed each sequence with the CLS token into the BERT model and then we pool the first vector output, so the CLS vector gets taken and we ignore the rest of the output. And then in the matching, which can be done outside the model, so inside a nearest neighbor library for example, we have a simple dot product between the query encoded vector and the passage encoding vector. Optionally we can also compress those two vectors with a single linear layer in the encoding stage to reduce the dimensionality of the model after the BERT computation is finished. 
 
 *60.05 seconds*
 
