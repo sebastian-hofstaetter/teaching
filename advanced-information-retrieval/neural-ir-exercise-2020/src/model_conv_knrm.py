@@ -23,8 +23,11 @@ class Conv_KNRM(nn.Module):
         self.word_embeddings = word_embeddings
 
         # static - kernel size & magnitude variables
-        self.mu = Variable(torch.FloatTensor(self.kernel_mus(n_kernels)), requires_grad=False).view(1, 1, 1, n_kernels)
-        self.sigma = Variable(torch.FloatTensor(self.kernel_sigmas(n_kernels)), requires_grad=False).view(1, 1, 1, n_kernels)
+        mu = torch.FloatTensor(self.kernel_mus(n_kernels)).view(1, 1, 1, n_kernels)
+        sigma = torch.FloatTensor(self.kernel_sigmas(n_kernels)).view(1, 1, 1, n_kernels)
+
+        self.register_buffer('mu', mu)
+        self.register_buffer('sigma', sigma)
 
         # todo
 
