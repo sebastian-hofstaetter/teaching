@@ -34,9 +34,9 @@ class MatchPyramid(nn.Module):
         # -------------------------------------------------------
 
         # shape: (batch, query_max)
-        query_pad_oov_mask = (query["tokens"] > 0).float()
+        query_pad_oov_mask = (query["tokens"]["tokens"] > 0).float()
         # shape: (batch, doc_max)
-        document_pad_oov_mask = (document["tokens"] > 0).float()
+        document_pad_oov_mask = (document["tokens"]["tokens"] > 0).float()
 
         # shape: (batch, query_max,emb_dim)
         query_embeddings = self.word_embeddings(query)
