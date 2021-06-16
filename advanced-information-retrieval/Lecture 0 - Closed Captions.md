@@ -8,7 +8,7 @@ All right, welcome everyone to advanced information retrieval in the summer seme
 *26.31 seconds*
 
 ### **2** AIR – 2021 
-Unfortunately, this semester is going to be an unusual one again, and so, to start off, I want to give you a quick overview of our Online Format and how we plan to conduct this lecture over the semester. So we're going to provide you weekly YouTube uploads of recorded lectures and we try to fit them in 45 minutes at maximum. And additionally, we will provide you with PDF slides and automatically generated closed caption text if you prefer to read than to listen. We offer a more flexible grading structure than in normal times, because we all know it's challenging right now, and. To still be able to connect with all of you, we will conduct online office hours for both the exercises and lectures also every week and you can join the zoom meeting and come and chat with us. And finally, our exam type is going to be a 24 hour take home exam where we will offer you two dates and more on the exam details in a bit. If you have any problems, questions and of course feedback, you can use the provided TUWEL forum or just write an email to me. 
+Unfortunately, this semester is going to be an unusual one again, and so, to start off, I want to give you a quick overview of our Online Format and how we plan to conduct this lecture over the semester. So we're going to provide you weekly YouTube uploads of recorded lectures, and we try to fit them in 45 minutes at maximum. Additionally, we will provide you with PDF slides and automatically generated closed caption text if you prefer to read than to listen. We offer a more flexible grading structure than in normal times, because we all know it's challenging right now, and. To still be able to connect with all of you, we will conduct online office hours for both the exercises and lectures also every week, and you can join the Zoom meeting and come and chat with us. Finally, our exam type is going to be a 24-hour take-home exam where we will offer you two dates and more on the exam details in a bit. If you have any problems, questions and of course feedback, you can use the provided TUWEL forum or just write an email to me. 
 
 *100.45 seconds*
 
@@ -18,7 +18,7 @@ Information retrieval is a very broad term that can be used in many different co
 *38.59 seconds*
 
 ### **5** Information Retrieval 
-In recent years, both commercial web search engines but also the academic research concerned with information retrieval, started to move away from simply displaying you 10 document results where you can click on them and then move to the document to a more user friendly user interface, where if you have a question that can be answered in a single statement, then this statement can be extracted from a certain web document and directly shown to the user, so you don't have to click on the web page to get the results. And here in this example that I started two years ago because I wanted to know the size of an A3 paper sheet. And in 2019. Google actually gave us the wrong result because it read a documented talked about all kinds of different paper sizes and it select the wrong paper size. Then when I repeated this experiment for last year's installment of the lecture. Google selected the same document, but now improved the capabilities of the extractive question answering system to actually provide the correct results of my query. 
+In recent years, both commercial web search engines but also the academic research concerned with information retrieval, started to move away from simply displaying you 10 document results where you can click on them and then move to the document to a more user-friendly user interface, where if you have a question that can be answered in a single statement, then this statement can be extracted from a certain web document and directly shown to the user, so you don't have to click on the web page to get the results. And here in this example that I started two years ago because I wanted to know the size of an A3 paper sheet. And in 2019. Google actually gave us the wrong result because it read a documented talk about all kinds of different paper sizes, and it selects the wrong paper size. Then when I repeated this experiment for last year's installment of the lecture. Google selected the same document, but now improved the capabilities of the extractive question answering system to actually provide the correct results of my query. 
 
 *97.38 seconds*
 
@@ -28,7 +28,7 @@ And now in this year where I repeated the same experiment, the user interface ch
 *42.72 seconds*
 
 ### **7** Machine Learning 
-The key to these and many other advances, is machine learning and in this lecture we are going to talk about machine learning and not AI because as this tweet very funny shows, if you write in Python, it's probably machine learning, but if you make a marketing slide and write it in PowerPoint, it's probably AI. So, in this lecture I want to emphasize, then we focus on machine learning and not AI. 
+The key to these and many other advances, is machine learning and in this lecture, we are going to talk about machine learning and not AI because as this tweet very funny shows, if you write in Python, it's probably machine learning, but if you make a marketing slide and write it in PowerPoint, it's probably AI. So, in this lecture I want to emphasize, then we focus on machine learning and not AI. 
 
 *34.32 seconds*
 
@@ -38,7 +38,7 @@ I also want to caution you that once you start doing machine learning most of th
 *20.36 seconds*
 
 ### **9** Recommended Prerequisites 
-Let's talk about the recommended prerequisites, and I want to emphasize that these are only recommended but not required. So if you don't have those recommended skills, it shouldn't be a problem as long as you're motivated to learn some of them as we go along. It would be good if you have some basic machine learning and know-how about basic concepts and maybe also experience with one of the neural network frameworks. And of course it's good if you have Experience in reading academic papers as they have most of the time a different and more technical writing style than other sources. If you visited our Basic IR course, that's of course awesome, but it's not necessary as we will revisit the basics in a crash course. Good programming skills are always nice, but again, if you are in a group where you can support each other, it shouldn't be necessary to have a long experience with programming. One necessity is to have an NVIDIA GPU available, but if you don't have one, you can use a free GPU from Google Colab and this service is completely free with limits in terms of how long you can use the GPU. But we designed the exercise to keep you within those limits. 
+Let's talk about the recommended prerequisites, and I want to emphasize that these are only recommended but not required. So if you don't have those recommended skills, it shouldn't be a problem as long as you're motivated to learn some of them as we go along. It would be good if you have some basic machine learning and know-how about basic concepts and maybe also experience with one of the neural network frameworks. And of course, it's good if you have Experience in reading academic papers as they have most of the time a different and more technical writing style than other sources. If you visited our Basic IR course, that's of course awesome, but it's not necessary as we will revisit the basics in a crash course. Good programming skills are always nice, but again, if you are in a group where you can support each other, it shouldn't be necessary to have a long experience with programming. One necessity is to have an NVIDIA GPU available, but if you don't have one, you can use a free GPU from Google Colab and this service is completely free with limits in terms of how long you can use the GPU. But we designed the exercise to keep you within those limits. 
 
 *106.81 seconds*
 
@@ -53,7 +53,7 @@ Alright, let's talk about our organization and what we plan to do and how we pla
 *8.96 seconds*
 
 ### **12** Syllabus 
-Now to the exciting part. The contents of our advanced information Retrieval lecture, which is divided into three blocks. First, we look at a Crash Course and revisit some of the basics in IR. Then we look at representation learning and finally the large block on Neural methods for IR. In the crash course we will first revisite the fundamentals and traditional indexing and scoring methods. Then we look at how we evaluate ranked lists in the information retrieval context, both with binary and gradient relevance. And finally, we look at how we create and analyze test collections to be able to conduct the evaluations. 
+Now to the exciting part. The contents of our advanced information Retrieval lecture, which is divided into three blocks. First, we look at a Crash Course and revisit some basics in IR. Then we look at representation learning and finally the large block on Neural methods for IR. In the crash course we will first revisit the fundamentals and traditional indexing and scoring methods. Then we look at how we evaluate ranked lists in the information retrieval context, both with binary and gradient relevance. And finally, we look at how we create and analyze test collections to be able to conduct the evaluations. 
 
 *64.44 seconds*
 
@@ -68,17 +68,17 @@ In our main block of Neural IR we first look at the so called re ranking approac
 *125.39 seconds*
 
 ### **16** Lectures / Content 
-The lectures are both in TUWEL as well as my teaching repository on GitHub, where you will find additional lecture notes in form of automatically created closed captions. So if you want, please go ahead and start the repository so more people will see it and add your content via issues and pull requests. For example, if you fix automatic closed caption errors you will get bonus points. If you add lecture notes, summaries, bugfixes, etc. of course you will also be rewarded with generous bonus points. 
+The lectures are both in TUWEL as well as my teaching repository on GitHub, where you will find additional lecture notes in form of automatically created closed captions. So, if you want, please go ahead and start the repository so more people will see it and add your content via issues and pull requests. For example, if you fix automatic closed caption errors you will get bonus points. If you add lecture notes, summaries, bugfixes, etc. of course you will also be rewarded with generous bonus points. 
 
 *45.56 seconds*
 
 ### **17** Exercises 
-We will have two exercises this semester. The first is a data annotation exercise to understand the task we tried to model, but more importantly to create a test and analysis data set that all of you will use in exercise 2, which will be the larger exercise of course. And here we have two parts that are implemented using Python And PyTorch with neural re-ranking where you will implement and train neural re-ranking models from scratch. And then the second part where we use a an up and coming workflow to download already trained models from HuggingFace and create an extractive QA system with that. 
+We will have two exercises this semester. The first is a data annotation exercise to understand the task we tried to model, but more importantly to create a test and analysis data set that all of you will use in exercise 2, which will be the larger exercise of course. Here we have two parts that are implemented using Python and PyTorch with neural re-ranking where you will implement and train neural re-ranking models from scratch. And then the second part where we use a an up-and-coming workflow to download already trained models from HuggingFace and create an extractive QA system with that. 
 
 *60.44 seconds*
 
 ### **18** Exercise 1 
-So for the first exercise we'll see that creating annotations is time consuming, and of course if we split the task it's easier and we create more data with less time spent per person. So each student will spend only a few hours, something like 4 to 5 hours, for approximately 500 annotations and with that we will create a fine grained passage retrieval and extractive QA dataset that's based on MSMARCO. And this fine grained data does not exist yet. So if we want to use something like that in Exercise 2, we have to create it ourselves. And the interesting part here is we of course pool together all the resources created in Exercise 1 for everyone to be able to use in Exercise 2. So you can then use your own work again in Exercise 2. And of course before we publish any data, we will completely anonymize it and remove any student IDs associated for the grading for Exercise 1. 
+So for the first exercise we'll see that creating annotations is time consuming, and of course if we split the task it's easier, and we create more data with less time spent per person. E student will spend only a few hours, something like 4 to 5 hours, for approximately 500 annotations and with that we will create a fine-grained passage retrieval and extractive QA dataset that's based on MSMARCO. And this fine-grained data does not exist yet. So if we want to use something like that in Exercise 2, we have to create it ourselves. And the interesting part here is we of course pool together all the resources created in Exercise 1 for everyone to be able to use in Exercise 2. You can then use your own work again in Exercise 2. And of course, before we publish any data, we will completely anonymize it and remove any student IDs associated for the grading for Exercise 1. 
 
 *92.39 seconds*
 
@@ -88,17 +88,17 @@ For Exercise one, we actually created a specialized and simple and hopefully fun
 *59.47 seconds*
 
 ### **20** Exercise 2 
-In Exercise 2, first we're going to implement and train non state of the art neural re-ranking models. They are not state of the art, but they teach you how to use PyTorch, how it works. And it allows you to learn the inner workings of training, loop loss functions and tensor operations without having to wait endless amounts of time that you would have for state of the art models. And then we will use pre-trained models from the HuggingFace model hub to create an extractive QA system that now changes the aspect. So here we don't actually train the model ourselves anymore because we'll download some large BERT instance. But we only use it for inference. And if we put those two together, we create a pipeline that's necessary to get those Google like results that I showed you in the beginning. 
+In Exercise 2, first we're going to implement and train non-state of the art neural re-ranking models. They are not state of the art, but they teach you how to use PyTorch, how it works. And it allows you to learn the inner workings of training, loop loss functions and tensor operations without having to wait endless amounts of time that you would have for state-of-the-art models. And then we will use pre-trained models from the HuggingFace model hub to create an extractive QA system that now changes the aspect. So here we don't actually train the model ourselves anymore because we'll download some large BERT instance. But we only use it for inference. And if we put those two together, we create a pipeline that's necessary to get those Google-like results that I showed you in the beginning. 
 
 *75.63 seconds*
 
 ### **21** Exercise 2 
-Exercise 2 will be conducted in groups of three persons managed via TUWEL and you will be evaluated together. You work in a private GitHub repository that we administer via GitHub classroom, which allows us to create a boilerplate template for you so you have an easier start. And of course we hope that this Exercise is interesting, engaging and fun, and for creative extra work we will award you Lots of bonus points to show you how we appreciate it if you have fun with the exercise. And of course, if you find and fix bugs in the starter code or the lecture slides, we will also give you bonus points for that. 
+Exercise 2 will be conducted in groups of three persons managed via TUWEL and you will be evaluated together. You work in a private GitHub repository that we administer via GitHub classroom, which allows us to create a boilerplate template for you, so you have an easier start. And of course, we hope that this Exercise is interesting, engaging and fun, and for creative extra work we will award you Lots of bonus points to show you how we appreciate it if you have fun with the exercise. And of course, if you find and fix bugs in the starter code or the lecture slides, we will also give you bonus points for that. 
 
 *58.7 seconds*
 
 ### **22** Online Exam 
-The Online Exam will be a 24 hour take home exam without any supervision. And we will give you a paper to read and post some questions to be answered in the TUWEL test format. This exam is completely open book, so you can go ahead and please go ahead, watch lectures, do background reading and read as much as possible. We will offer two dates which we now set on the 26th of May and the 16th of June, and both times the exam will start at noon and finish at noon on the day after. 
+The Online Exam will be a 24-hour take home exam without any supervision. We will give you a paper to read and post some questions to be answered in the TUWEL test format. This exam is completely open book, so you can go ahead and please go ahead, watch lectures, do background reading, and read as much as possible. We will offer two dates which we now set on the 26th of May and the 16th of June, and both times the exam will start at noon and finish at noon on the day after. 
 
 *56.73 seconds*
 
@@ -108,9 +108,10 @@ The Grading Scheme looks as follows: For Exercise 1 you will get 10% of the tota
 *41.31 seconds*
 
 ### **24** See you next week – virtually 👋  
-I hope you're excited as I am for this course and if you have any feedback problems, questions, any other issues, please write me an email and we'll definitely figure it out, so hopefully see you next week, even though it's only virtual. 
+I hope you're excited as I am for this course and if you have any feedback problems, questions, any other issues, please write me an email, and we'll definitely figure it out, so hopefully see you next week, even though it's only virtual. 
 
 *23.89 seconds*
 
 ### Stats
 Average talking time: 58.59345738636364
+
