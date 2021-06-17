@@ -152,7 +152,7 @@ def calculate_metrics_plain(ranking, qrels, binarization_point=1.0, return_per_q
         return local_dict
 
 
-# unrolled: dict<qid,(did,score)>
+# unrolled: dict<qid,[(did,score)]>
 def unrolled_to_ranked_result(unrolled_results):
     ranked_result = {}
     for query_id, query_data in unrolled_results.items():
