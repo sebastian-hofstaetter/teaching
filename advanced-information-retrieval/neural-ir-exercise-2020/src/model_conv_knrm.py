@@ -23,8 +23,11 @@ class Conv_KNRM(nn.Module):
         self.word_embeddings = word_embeddings
 
         # static - kernel size & magnitude variables
-        self.mu = Variable(torch.FloatTensor(self.kernel_mus(n_kernels)), requires_grad=False).view(1, 1, 1, n_kernels)
-        self.sigma = Variable(torch.FloatTensor(self.kernel_sigmas(n_kernels)), requires_grad=False).view(1, 1, 1, n_kernels)
+        mu = torch.FloatTensor(self.kernel_mus(n_kernels)).view(1, 1, 1, n_kernels)
+        sigma = torch.FloatTensor(self.kernel_sigmas(n_kernels)).view(1, 1, 1, n_kernels)
+
+        self.register_buffer('mu', mu)
+        self.register_buffer('sigma', sigma)
 
         # todo
 
@@ -36,9 +39,9 @@ class Conv_KNRM(nn.Module):
 
         # we assume 0 is padding - both need to be removed
         # shape: (batch, query_max)
-        query_pad_mask = (query["tokens"] > 0).float() # > 1 to also mask oov terms
+        query_pad_mask = (query["tokens"]["tokens"] > 0).float() # > 1 to also mask oov terms
         # shape: (batch, doc_max)
-        document_pad_mask = (document["tokens"] > 0).float()
+        document_pad_mask = (document["tokens"]["tokens"] > 0).float()
 
         # shape: (batch, query_max,emb_dim)
         query_embeddings = self.word_embeddings(query)
