@@ -17,7 +17,7 @@ from pydub import AudioSegment
 import azure.cognitiveservices.speech as speechsdk
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--in-pptx', action='store', dest='in_file', help='vocab save directory', required=True)
+parser.add_argument('--in-pptx', action='store', dest='in_file', help='', required=True)
 #parser.add_argument('--out-pptx', action='store', dest='out_file', help='bool ', required=True)
 parser.add_argument('--out-cc', action='store', dest='out_file_notes', help='', required=True)
 parser.add_argument('--azure-key', action='store', dest='azure_key', help='', required=True)
