@@ -1,6 +1,6 @@
 # Our Time-Optimized Content Creation Workflow for Remote Teaching
 
-Check out our full paper for an in-depth evaluation of our methods published at the SIGSCE Technical Symposium 2022: 
+Check out our full paper for an in-depth evaluation of our methods published at the SIGCSE Technical Symposium 2022: 
 
 *A Time-Optimized Content Creation Workflow for Remote Teaching*  Sebastian Hofstätter, Sophia Althammer, Mete Sertkan and Allan Hanbury
 
