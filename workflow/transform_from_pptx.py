@@ -1,5 +1,7 @@
 #
-# generate closed captions from a narrated powerpoint file
+# Transform a narrated powerpoint file and output:
+# - Transcripts per slide (Using Azure speech)
+# - Timestamps and slide titles for YouTube's chapter UI
 # -------------------------------
 #
 

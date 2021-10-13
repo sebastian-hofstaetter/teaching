@@ -1,13 +1,22 @@
 # Hi there 👋 Welcome to my teaching materials!
 
-I'm working on two Information Retrieval courses at the Vienna University of Technology (TU Wien), mainly focusing on the master-level Advanced Information Retrieval course. I try to create engaging, fun, and invormative lectures and exercises. 
-
-- The **Introduction to Information Retrieval** course focuses on IR basics and engineering skills of the students.
-- The **Advanced Information Retrieval** course focuses on machine learning & neural IR techniques and tries to follow the state-of-the-art in IR research.
+I'm working on Information Retrieval at the Vienna University of Technology (TU Wien), mainly focusing on the award-wining master-level Advanced Information Retrieval course. I try to create engaging, fun, and informative lectures and exercises &ndash; both in-person and online!
 
 *Please feel free to open up an issue or a pull request if you want to add something, find a mistake, or think something should be explained better!*
 
+## Our Time-Optimized Content Creation Workflow for Remote Teaching
+
+Our workflow creates an engaging remote learning experience for a university course, while minimizing the post-production time of the educators. We make use of ubiquitous and commonly free services and platforms, so that our workflow is inclusive for all educators and provides polished experiences for students. Our learning materials provide for each lecture: 1) a recorded video, uploaded on YouTube, with exact slide timestamp indices, which enables an enhanced navigation UI; and 2) a high-quality flow-text automated transcript of the narration with proper punctuation and capitalization, improved with a student participation workflow on GitHub. We automate the transformation and post-production between raw narrated slides and our published materials with custom tools.
+
+![Workflow Overview](workflow/workflow-overview.png)
+
+Head over to our [workflow folder](workflow) for more information and our custom python-based transformation tools. Or check out our full paper for an in-depth evaluation of our methods published at the SIGSCE Technical Symposium 2022: 
+
+*A Time-Optimized Content Creation Workflow for Remote Teaching*  Sebastian Hofstätter, Sophia Althammer, Mete Sertkan and Allan Hanbury https://arxiv.org/abs/2110.05601
+
 ## Advanced Information Retrieval 2021
+
+**🏆 Won the Best Distance Learning Award 2021 @ TU Wien**
 
 Information Retrieval is the science behind search technology. Certainly, the most visible instances are the large Web Search engines, the likes of Google and Bing, but information retrieval appears everywhere we have to deal with unstructured data (e.g. free text).
 
@@ -29,10 +38,10 @@ In the following we provide links to recordings, slides, and closed captions for
 | **4:**&nbsp;Word&nbsp;Representation&nbsp;Learning     | We take a look at word representations and basic word embeddings including a usage example in Information Retrieval| [YouTube](https://youtu.be/f3nM6DKVwug) | [PDF](advanced-information-retrieval/Lecture%204%20-%20Word%20Representation%20Learning.pdf)            | [Transcript](advanced-information-retrieval/Lecture%204%20-%20Closed%20Captions.md)
 |**5:**&nbsp;Sequence&nbsp;Modelling     | We look at CNNs and RNNs for sequence modelling, including the basics of the attention mechanism. | [YouTube](https://youtu.be/7Bfj_UuJh38) | [PDF](advanced-information-retrieval/Lecture%205%20-%20Sequence%20modelling%20in%20NLP.pdf)            | [Transcript](advanced-information-retrieval/Lecture%205%20-%20Closed%20Captions.md)
 | **6:**&nbsp;Transformer&nbsp;&&nbsp;BERT     | We study the Transformer architecture; pre-training with BERT, the HuggingFace ecosystem where the community can share models; and overview Extractive Question Answering (QA). | [YouTube](https://youtu.be/Mt7UJNKxscA) | [PDF](advanced-information-retrieval/Lecture%206%20-%20Transformer%20and%20BERT%20Pre-training.pdf)            | [Transcript](advanced-information-retrieval/Lecture%206%20-%20Closed%20Captions.md)
-| **7:**&nbsp;Introduction&nbsp;to&nbsp;Neural&nbsp;Re&#8209;Ranking     | We look at the workflow (including training and evaluation) of neural re-ranking models and some basic neural re-ranking architectures. | [YouTube](https://youtu.be/GSixIsI1eZE) | [PDF](advanced-information-retrieval/Lecture%207%20-%20Introduction%20to%20Neural%20Re-Ranking.pdf)            | [Transcript](advanced-information-retrieval/Lecture%207%20-%20Closed%20Captions.md)
-| **8:**&nbsp;Transformer&nbsp;Contextualized&nbsp;Re&#8209;Ranking     | We learn how to use Transformers (and the pre-trained BERT model) for neural re-ranking - for the best possible results and more efficient approaches, where we tradeoff quality for performance. | [YouTube](https://youtu.be/Fle-jKzV-Rk) | [PDF](advanced-information-retrieval/Lecture%208%20-%20Transformer%20Contextualized%20Re-Ranking.pdf)            | [Transcript](advanced-information-retrieval/Lecture%208%20-%20Closed%20Captions.md)
+| **7:**&nbsp;Introduction&nbsp;to Neural&nbsp;Re&#8209;Ranking     | We look at the workflow (including training and evaluation) of neural re-ranking models and some basic neural re-ranking architectures. | [YouTube](https://youtu.be/GSixIsI1eZE) | [PDF](advanced-information-retrieval/Lecture%207%20-%20Introduction%20to%20Neural%20Re-Ranking.pdf)            | [Transcript](advanced-information-retrieval/Lecture%207%20-%20Closed%20Captions.md)
+| **8:**&nbsp;Transformer&nbsp;Contextualized Re&#8209;Ranking     | We learn how to use Transformers (and the pre-trained BERT model) for neural re-ranking - for the best possible results and more efficient approaches, where we tradeoff quality for performance. | [YouTube](https://youtu.be/Fle-jKzV-Rk) | [PDF](advanced-information-retrieval/Lecture%208%20-%20Transformer%20Contextualized%20Re-Ranking.pdf)            | [Transcript](advanced-information-retrieval/Lecture%208%20-%20Closed%20Captions.md)
 | **9:**&nbsp;Domain&nbsp;Specific&nbsp;Applications *Guest&nbsp;lecture&nbsp;by&nbsp;@sophiaalthammer*    | We learn how about different task settings, challenges, and solutions in domains other than web search. | [YouTube](https://youtu.be/rHXTpHIiq6U) | [PDF](advanced-information-retrieval/Lecture%209%20-%20Domain%20Specific%20Applications.pdf)            | [Transcript](advanced-information-retrieval/Lecture%209%20-%20Closed%20Captions.md)
-| **10:**&nbsp;Dense&nbsp;Retrieval&nbsp;❤&nbsp;Knowledge&nbsp;Distillation | We learn about the (potential) future of search: dense retrieval. We study the setup, specific models, and how to train DR models. Then we look at how knowledge distillation greatly improves the training of DR models and topic aware sampling to get state-of-the-art results. | [YouTube](https://youtu.be/EJ_7Gx6amt8) | [PDF](advanced-information-retrieval/Lecture%2010%20-%20Dense%20Retrieval%20and%20Knowledge%20Distillation.pdf)            | [Transcript](advanced-information-retrieval/Lecture%2010%20-%20Closed%20Captions.md)
+| **10:**&nbsp;Dense&nbsp;Retrieval ❤&nbsp;Knowledge&nbsp;Distillation | We learn about the (potential) future of search: dense retrieval. We study the setup, specific models, and how to train DR models. Then we look at how knowledge distillation greatly improves the training of DR models and topic aware sampling to get state-of-the-art results. | [YouTube](https://youtu.be/EJ_7Gx6amt8) | [PDF](advanced-information-retrieval/Lecture%2010%20-%20Dense%20Retrieval%20and%20Knowledge%20Distillation.pdf)            | [Transcript](advanced-information-retrieval/Lecture%2010%20-%20Closed%20Captions.md)
 
 ### Neural IR & Extractive QA Exercise
 

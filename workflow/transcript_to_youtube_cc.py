@@ -1,15 +1,16 @@
 #
-# transfor transcipt to sentences only for youtube cc upload
+# Transform transcipt to sentences only for youtube cc upload
 # -------------------------------
+# This script takes out all our additional Markdown formatting and titles, 
+# so that we receive a clean list of sentences per input file (written to a specified output folder).
+# This output can be copy + pasted into the Youtube UI for closed captions (in the Youtube creator studio)
 #
 
 import argparse
 import os
 import sys
 sys.path.append(os.getcwd())
-import copy
 import time
-import datetime
 
 import blingfire
 import glob

@@ -1,0 +1,4 @@
+blingfire==0.0.9
+azure-cognitiveservices-speech==1.10.0
+pydub==0.23.1
+python-pptx==0.6.18
