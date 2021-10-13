@@ -10,7 +10,7 @@ Our workflow creates an engaging remote learning experience for a university cou
 
 ![Workflow Overview](workflow/workflow-overview.png)
 
-Head over to our [workflow folder](workflow) for more information and our custom python-based transformation tools. Or check out our full paper for an in-depth evaluation of our methods published at the SIGSCE Technical Symposium 2022: 
+Head over to our [workflow folder](workflow) for more information and our custom python-based transformation tools. Or check out our full paper for an in-depth evaluation of our methods published at the SIGCSE Technical Symposium 2022: 
 
 *A Time-Optimized Content Creation Workflow for Remote Teaching*  Sebastian Hofstätter, Sophia Althammer, Mete Sertkan and Allan Hanbury https://arxiv.org/abs/2110.05601
 
