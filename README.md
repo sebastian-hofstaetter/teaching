@@ -21,6 +21,8 @@ Information Retrieval is the science behind search technology. Certainly, the mo
 
 **A paradigm shift.** Taking off in 2019 the Information Retrieval research field began an enormous paradigm shift towards utilizing BERT-based language models in various forms to great effect with huge leaps in quality improvements for search results using large-scale training data. This course aims to showcase a slice of these advances in state-of-the-art IR research towards the next generation of search engines. 
 
+**New in 2022:** Use GitHub Discussions to ask questions about the lecture!
+
 ![Syllabus](advanced-information-retrieval/air-syllabus.png)
 *The AIR'22 syllabus overview*
 
