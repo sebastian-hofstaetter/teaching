@@ -1,4 +1,5 @@
-blingfire==0.0.9
-azure-cognitiveservices-speech==1.10.0
+blingfire==0.1.8
+azure-cognitiveservices-speech==1.20.0
 pydub==0.23.1
 python-pptx==0.6.18
+numpy==1.22.3 # (is required for blingfire and not available on clean minimal environment)
