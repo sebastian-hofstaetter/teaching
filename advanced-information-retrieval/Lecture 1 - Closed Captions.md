@@ -38,7 +38,7 @@ This is done in an inverted index. Here we transform text-based information.
 *7.71 seconds*
 
 ### **8** Inverted Index 
-The inverted index allows us to retrieve documents very efficiently from a very large collection. The inverted index is a very basic data structure that stores statistics per term, and those statistics are then used later on by a scoring model to produce relevance score. And the main statistics we work with today in this lecture are document frequency (how many documents contain a term) and term frequency per document (how often does a term appear per document). Furthermore, we can also save the document length and the average document length. And we need to save those statistics in a format that is accessible by a given term because at query time we only know the query terms. Additionally, of course we can also save metadata about document such as the name, the title, and some paths to be able to display the document to the user later on in the user interface. 
+The inverted index allows us to retrieve documents very efficiently from a very large collection. The inverted index is a very basic data structure that stores statistics per term, and those statistics are then used later on by a scoring model to produce a relevance score. And the main statistics we work with today in this lecture are document frequency (how many documents contain a term) and term frequency per document (how often does a term appear per document). Furthermore, we can also save the document length and the average document length. And we need to save those statistics in a format that is accessible by a given term because at query time we only know the query terms. Additionally, of course we can also save metadata about a document such as the name, the title, and some paths to be able to display the document to the user later on in the user interface. 
 
 *85.1 seconds*
 
@@ -53,7 +53,7 @@ To create this inverted index, we process documents in a simple pipeline. So her
 *101.01 seconds*
 
 ### **11** Tokenization 
-Let's look at each of these steps in a bit more details, starting with tokenization. A very naïve baseline just splits on each whitespace and punctuation character. For example, if you have something like U.S.A, you would split that into three different terms, U, S and A. Or if you have a date, you will also split that date into something that would be hard to recognize if you search for that exact date. However, even though we find those examples that are not the best showcase, is still a very strong baseline for the English language, and an improvement on top of that would be for example to keep abbreviations names and numbers together as one token. For example, the open-source tool from Stanford that creates a tokenization which can also handle emoji characters, which are surprisingly hard to be aware of. 
+Let's look at each of these steps in a bit more details, starting with tokenization. A very naïve baseline just splits on each whitespace and punctuation character. For example, if you have something like U.S.A, you would split that into three different terms, U, S and A. Or if you have a date, you will also split that date into something that would be hard to recognize if you search for that exact date. However, even though we find those examples that are not the best showcase, it is still a very strong baseline for the English language, and an improvement on top of that would be for example to keep abbreviations names and numbers together as one token. For example, the open-source tool from Stanford that creates tokenization which can also handle emoji characters, which are surprisingly hard to be aware of. 
 
 *76.21 seconds*
 
@@ -63,42 +63,42 @@ The next point is stemming. Here we reduce the terms to their roots, and we just
 *58.21 seconds*
 
 ### **13** 
-OK, so let's assume we build our inverted index. We implemented it, we filled it with hundreds of thousands of documents, and now we have all those terms statistics per document in our efficient data structure. So how do we actually use this data structure to conduct a search?  
+OK, so let's assume we build our inverted index, we implemented it, we filled it with hundreds of thousands of documents, and now we have all those terms statistics per document in our efficient data structure. So how do we actually use this data structure to conduct a search?  
 
 *26.19 seconds*
 
 ### **14** Querying the Inverted Index 
-The query workflow is as follows. We start off with a query and we want to answer if it's relevant, so we look up every term in our inverted index and gather our statistics that are saved in the inverted index. Those statistics are fed into a scoring model that only operates on the statistics without needing to read er open the full document. And we only have to operate the scoring model on the subset of documents that are referenced by our given query terms, which of course reduces the amount of computation required in most cases. And now the scoring model gives us a score for each document and query pair so that we can sort the documents by score and retrieve the most relevant documents. And then we can open only the top documents and display them to the user. Of course, this is a simplified view, because a document could be relevant without actually containing the exact query terms, and we will spend a lot of time in the neural IR lectures concerned with that problem. But now let's keep it simple and say document is only relevant if it contains at least one occurrence of an exact term. 
+The query workflow is as follows. We start off with a query and we want to answer if it's relevant, so we look up every term in our inverted index and gather our statistics that are saved in the inverted index. Those statistics are fed into a scoring model that only operates on the statistics without needing to read or open the full document. And we only have to operate the scoring model on the subset of documents that are referenced by our given query terms, which of course reduces the amount of computation required in most cases. And now the scoring model gives us a score for each document and query pair so that we can sort the documents by score and retrieve the most relevant documents. And then we can open only the top documents and display them to the user. Of course, this is a simplified view, because a document could be relevant without actually containing the exact query terms, and we will spend a lot of time in the neural IR lectures concerned with that problem. But now let's keep it simple and say a document is only relevant if it contains at least one occurrence of an exact term. 
 
 *111.53 seconds*
 
 ### **15** Types of queries (including, but not limited to) 
-Those types of queries that we can do on top of an inverted index are already pretty diverse, so we can search for exact matching where we match full words or concatenate multiple query words with an or operator. We can also conduct Boolean queries where we say both words or all the words have to appear, or certain words are not allowed to appear in a document to filter our results further. And then of course we can expand queries and incorporate synonyms or other similar or relevant words into the query. Furthermore, we can conduct wildcard queries, phrase queries, phonetic queries, a lot of different query processing techniques can be applied before we look up statistics from the inverted index. 
+Those types of queries that we can do on top of an inverted index are already pretty diverse, so we can search for exact matching where we match full words or concatenate multiple query words with an "or" operator. We can also conduct Boolean queries where we say both words or all the words have to appear, or certain words are not allowed to appear in a document to filter our results further. And then of course we can expand queries and incorporate synonyms or other similar or relevant words into the query. Furthermore, we can conduct wildcard queries, phrase queries, phonetic queries, a lot of different query processing techniques can be applied before we look up statistics from the inverted index. 
 
 *66.25 seconds*
 
 ### **16** Inverted Index: Dictionary 
-A key component of the inverted index is the actual implementation of the dictionary that holds our vocabulary terms, and this dictionary maps text to an object and this object, in our case, here is a posting list, but of course we can also augment it with other data if that's needed for specific scoring models. And the properties that we want from this dictionary is first and foremost a very fast random look up. We don't want to sequentially iterate through the dictionary to find something we want to be able to randomly look up something very fast, and it should also be very memory efficient so we can keep the complete dictionary in our memory. And naturally, there are a lot of choices created by computer scientists over the years. 
+A key component of the inverted index is the actual implementation of the dictionary that holds our vocabulary terms, and this dictionary maps text to an object and this object, in our case, here is a posting list, but of course we can also augment it with other data if that's needed for specific scoring models. And the properties that we want from this dictionary is first and foremost a very fast random look up. We don't want to sequentially iterate through the dictionary to find something, we want to be able to randomly look up something very fast, and it should also be very memory efficient so we can keep the complete dictionary in our memory. And naturally, there are a lot of choices created by computer scientists over the years. 
 
 *72.4 seconds*
 
 ### **17** Dictionary data structures 
-The easiest and probably most common solution for simple inverted indices is a hash table, that simply Maps the hash value of a word to a position in a table. A more advanced method would be a tree or a prefix tree that stores the alphabet per node and a path through the tree forms words. This is very helpful if you want to have something like autocomplete or part of word matching. Then if you have a B-tree, you can have a self-balancing tree that improves the efficiency of a normal tree. And often also used is a finite state transducer which is a very memory friendly automat that allows you to create your dictionary once as this automated walks through different characters. Related here is the so-called Bloom Filter that's not used directly in the inverted index, but it's a very cool data structure that tests if an element is in a set, and this can be done very, very efficiently. For example, if you need to spread out your inverted index across multiple nodes you can use a Bloom filter to check if your term is local to a certain node, before conducting a very expensive network operation. 
+The easiest and probably most common solution for simple inverted indices is a hash table, that simply maps the hash value of a word to a position in a table. A more advanced method would be a tree or a prefix tree that stores the alphabet per node and a path through the tree forms words. This is very helpful if you want to have something like autocomplete or part of word matching. Then if you have a B-tree, you can have a self-balancing tree that improves the efficiency of a normal tree. And often also used is a finite state transducer which is a very memory friendly automat that allows you to create your dictionary once as this automat walks through different characters. Related here is the so-called Bloom Filter that's not used directly in the inverted index, but it's a very cool data structure that tests if an element is in a set, and this can be done very, very efficiently. For example, if you need to spread out your inverted index across multiple nodes you can use a Bloom filter to check if your term is local to a certain node, before conducting a very expensive network operation. 
 
 *127.64 seconds*
 
 ### **18** Hash table 
-The hash table uses a hash function to quickly map a key to a value. It's a very common and broadly applicable data structure, and it powers most of the basic dictionary implementations of most programming languages. It allows for a fast look up. Which is in terms of all O(1), but I want to caution that this doesn't mean it's free, so you still have to compute something and it's not instant. You don't need any sorting or sorted sequential access, which is very good for our inverted index. But it only does direct mapping, so there are no wild card queries, and you can't do autocomplete easily with that. 
+The hash table uses a hash function to quickly map a key to a value. It's a very common and broadly applicable data structure, and it powers most of the basic dictionary implementations of most programming languages. It allows for a fast look up which is in terms of O(1), but I want to caution that this doesn't mean it's free, so you still have to compute something and it's not instant. You don't need any sorting or sorted sequential access, which is very good for our inverted index. But it only does direct mapping, so there are no wild card queries, and you can't do autocomplete easily with that. 
 
 *60.23 seconds*
 
 ### **19** Spell-checking 
-To also improve the term matching capabilities, you can use spell checking, especially if you work with text that's not of a very high quality. And what you want to do here is first correct documents that are indexed but also correct user queries to retrieve the correct answers in a "did you mean XYZ?" style. There are 2 main flavors of spellchecking of simple spellchecking where one new conduct spell checking on isolated word so each word is checked on its own for misspellings, and while this is very simple and efficient to do, it will not catch typos that come from a context of words. And a context sensitive spellchecking has to look at surrounding words to know if a certain word is the correct applicable here in this scenario. 
+To also improve the term matching capabilities, you can use spell checking, especially if you work with text that's not of a very high quality. And what you want to do here is first correct documents that are indexed but also correct user queries to retrieve the correct answers in a "did you mean XYZ?" style. There are 2 main flavors of spellchecking, of simple spellchecking, where one new conduct spell checking on isolated word so each word is checked on its own for misspellings, and while this is very simple and efficient to do, it will not catch typos that come from a context of words. And a context sensitive spellchecking has to look at surrounding words to know if a certain word is the correct applicable here in this scenario. 
 
 *78.41 seconds*
 
 ### **20** Spell-checking by Peter Norvig 
-Of course, with spell-checking, as with every other task, there are numerous neural network methods that try to solve this problem, but a very simple solution by Peter Norvig is self-contained in a few lines of code that does simple and isolated spell checking. And if you're interested in spell-checking, I can highly recommend that you check out the details, implementation, and explanations of why this simple solution also produces good spell-checking results. Already, it uses a text file of a million words collected from books for correct spelling information, and then in works based on the probability of each word occurring based on the frequency in the books. So, you get a set of candidate words from your text that you want to spell check and then the most probable correct spelling is induced from the available candidates. Please go check it out if you're interested. 
+Of course, with spell-checking, as with every other task, there are numerous neural network methods that try to solve this problem, but a very simple solution by Peter Norvig is self-contained in a few lines of code that does simple and isolated spell checking. And if you're interested in spell-checking, I can highly recommend that you check out the details, implementations, and explanations of why this simple solution also produces good spell-checking results already. It uses a text file of a million words collected from books for correct spelling information, and then in works based on the probability of each word occurring based on the frequency in the books. So, you get a set of candidate words from your text that you want to spell check and then the most probable correct spelling is induced from the available candidates. Please go check it out if you're interested for more. 
 
 *86.47 seconds*
 
@@ -108,12 +108,12 @@ So now we switch gears, and we talk about how we can compute a relevance score a
 *17.93 seconds*
 
 ### **22** Scoring model 
-A scoring model is defined as having an input of statistics from our inverted index, and the output is a single floating-point value, the score. And we do evaluate this model in a pairwise fashion, so one query and one document are scored at a time. So, if we want to score 1000 documents, we have to call this scoring model a thousand times, and it captures or tries to capture the notion of relevance in a mathematical model. And today we focus on free text queries and so-called ad hoc document retrieval where we only look at the document content and not possibly other values such as page rank, recency or click counts, etc. 
+A scoring model is defined as having an input of statistics from our inverted index, and the output is a single floating-point value, the score. And we do evaluate this model in a pairwise fashion, so one query and one document are scored at a time. So, if we want to score 1000 documents, we have to call this scoring model a thousand times, and it captures or tries to capture the notion of relevance in a mathematical model. And today we focus on free text queries and so-called "ad-hoc" document retrieval where we only look at the document content and not possibly other values such as page rank, recency or click counts, etc. 
 
 *62.44 seconds*
 
 ### **23** Search algorithm 
-The most basic search algorithm looks at query terms one by one, so here it goes. We have a result variable that keeps track of our partial scores. Then for each query term, we fetch the posting list for this query term via the inverted index. Then for each pair in our posting list so the document ID and the term frequency and potentially other statistics, are calculated partially by the scoring model and then we aggregate the score per document ID. So, after this nested for-loop, we get the final scores per document ID.  
+The most basic search algorithm looks at query terms one by one. So here it goes: We have a result variable that keeps track of our partial scores. Then for each query term, we fetch the posting list for this query term via the inverted index. Then for each pair in our posting list so the document ID and the term frequency and potentially other statistics, are calculated partially by the scoring model and then we aggregate the score per document ID. So, after this nested for-loop, we get the final scores per document ID.  
 
 *66.71 seconds*
 
@@ -133,7 +133,7 @@ And the limitations of this simple pattern-based approach is that relevance mean
 *63.16 seconds*
 
 ### **27** 
-Let's go into details and start with the most basic count-based scoring model there is, and that's TF-IDF or in the long form term frequency inverse document frequency. 
+Let's go into details and start with the most basic count-based scoring model there is, and that's TF-IDF or in the long form "term frequency inverse document frequency". 
 
 *16.21 seconds*
 
@@ -143,12 +143,12 @@ The conceptional data view of term frequency in a bag of words approach that we 
 *51.04 seconds*
 
 ### **29** Term Frequency – actual data storage 
-And again, the actual data storage is much more efficient because we have so many documents in an index that saving such a matrix with basically almost everywhere 0 is not a good idea, and the inverted index saves only non-zero entries. Therefore, it's not good at those random index based look ups that you could do in such a in an array based matrix data structure. However, we don't actually need to do a random look up on the document dimension because we have to score every single document per posting list.  
+And again, the actual data storage is much more efficient because we have so many documents in an index that saving such a matrix with basically almost everywhere 0 is not a good idea, and the inverted index saves only non-zero entries. Therefore, it's not good at those random index based look ups that you could do in such an array based matrix data structure. However, we don't actually need to do a random look up on the document dimension because we have to score every single document per posting list.  
 
 *52.45 seconds*
 
 ### **30** TF - Term Frequency 
-So, the term frequency is a measure of how often the term T appears in the document deep. It's a very powerful starting point for various numbers of retrieval models. And it also is the main point of our intuition from the beginning. However, empirical evaluation over time showed that using the raw frequency is not actually a very good solution, so you can either use relative frequencies, or you can dampen the values with the logarithm.  
+So, the term frequency is a measure of how often the term T appears in the document D. It's a very powerful starting point for various numbers of retrieval models and it also is the main point of our intuition from the beginning. However, empirical evaluation over time showed that using the raw frequency is not actually a very good solution, so you can either use relative frequencies, or you can dampen the values with a logarithm.  
 
 *42.86 seconds*
 
@@ -173,42 +173,42 @@ TF-IDF just put together those two measures we just talked about. So, we have th
 *86.49 seconds*
 
 ### **35** TF-IDF – Usage 
-TF-IDF is not only useful as a standalone ranking model. But its weights can also be used as a base for many other retrieval models, such as the vector space model that works better with TF-IDF weights, and it's also useful in a generic word weighting context for many NLP tasks, so we can have a task agnostic importance of a word in a document in a collection. And we can of course assign every word in a collection Its TF-IDF score. An example for that is again LSA latent semantic analysis that has been shown to work better if you utilized TF-IDF weights with it. 
+TF-IDF is not only useful as a standalone ranking model. But its weights can also be used as a base for many other retrieval models, such as the vector space model that works better with TF-IDF weights, and it's also useful in a generic word weighting context for many NLP tasks, so we can have a task agnostic importance of a word in a document in a collection. And we can of course assign every word in a collection its TF-IDF score. An example for that is again LSA (latent semantic analysis) that has been shown to work better if you utilized TF-IDF weights with it. 
 
 *56.12 seconds*
 
 ### **36** 
-Now, our main improvement today over the TF-IDF baseline is the so-called BM25 or best match 25 scoring model, that has been the backbone of many if not most open-source search engines for the last 30 years. 
+Now, our main improvement today over the TF-IDF baseline is the so-called BM25 or "best match 25" scoring model, that has been the backbone of many if not most open-source search engines for the last 30 years. 
 
 *29.98 seconds*
 
 ### **37** BM25 
-It has been created in 1994, and it's grounded in probabilistic retrieval. Overall, you can say that BM25 improves a lot over TF-IDF across most collections it's been tried on. But one caveat is that it has only been set as a default scoring in the popular Lucene search engine in 2015. So before then used TF-IDF. 
+It has been created in 1994, and it's grounded in probabilistic retrieval. Overall, you can say that BM25 improves a lot over TF-IDF across most collections it's been tried on. But one caveat is that it has only been set as a default scoring in the popular Lucene search engine in 2015. So before then it used TF-IDF. 
 
 *42.91 seconds*
 
 ### **38** BM25 (as defined by Robertson et al. 2009)  
-So, let's dive in straight into the BM25 formula as defined by Robertson and al. in 2009. So again, we see that we have two main components, one on the left is concerned with the term frequency and the one on the right is concerned with the document frequency. And the changes in comparison to TF-IDF are mainly here in the first part concerned with the term frequency that now also considers a normalization of the document length by the average document length and it introduces 2 hyperparameters, k and b, that can be tuned to define the influence of this document length normalization. And on the inverse document frequency side we see that now the formulation has changed a bit where we subtract the document frequency are of term team from the total before dividing it. Of course, we have to emphasize here that it's again only one of many possible variations, and we assume that we have no additional relevance information. If we do, a lot of different modules have been proposed to be able to put into this basic formula right here, and it's also simpler than the original formula from 1994 because over time it was shown that more complex parts concerned with query length etc. are not needed in empirical studies. If you want to know more about BM25, and of the origins and probabilistic theories behind it, there is a great overview paper with a lot of details linked here. 
+So, let's dive in straight into the BM25 formula as defined by Robertson et al. in 2009. So again, we see that we have two main components, one on the left is concerned with the term frequency and the one on the right is concerned with the document frequency. And the changes in comparison to TF-IDF are mainly here in the first part concerned with the term frequency that now also takes into account a normalization of the document length by the average document length and it introduces 2 hyperparameters, k and b, that can be tuned to define the influence of this document length normalization. And on the inverse document frequency side we see that now the formulation has changed a bit where we subtract the document frequency of term team from the total before dividing it. Of course, we have to emphasize here that it's again only one of many possible variations, and we assume that we have no additional relevance information. If we do, a lot of different modules have been proposed to be able to put into this basic formula right here, and it's also simpler than the original formula from 1994 because over time it was shown that more complex parts concerned with query length etc. are not needed in empirical studies. If you want to know more about BM25, and also of the origins and probabilistic theories behind it, there is a great overview paper with a lot of details linked here. 
 
 *147.56 seconds*
 
 ### **39** BM25 vs. TF-IDF 
-The simple case of BM25 looks a lot like TF-IDF, as we just saw. The one main difference is that BM25, the term frequency component contains a saturation function, and this has been shown to be the source of more effectiveness in practice. And of course, BM25 can be adapted for many different scenarios such as long queries or multiple fields.  
+The simple case of BM25 looks a lot like TF-IDF, as we just saw. The one main difference is that BM25, the term frequency component, contains a saturation function, and this has been shown to be the source of more effectiveness in practice. And of course, BM25 can be adapted for many different scenarios such as long queries or multiple fields.  
 
 *36.08 seconds*
 
 ### **40** BM25 vs. TF-IDF - Saturation 
-If we take a closer look at the differences between BM25 and the TF-IDF term frequency saturation, we can see that even though TF-IDF uses a logarithm to dampen the raw values, the saturation from BM25 is even more dampened and diminishes even more quickly based on the K hyper parameters that are used. 
+If we take a closer look at the differences between BM25 and the TF-IDF term frequency saturation, we can see that even though TF-IDF uses a logarithm to dampen the raw values, the saturation from BM25 is even more dampened and diminishes even more quickly based on the K hyperparameters that are used. 
 
 *34.16 seconds*
 
 ### **41** BM25 vs. TF-IDF - Example 
-No, let's look at a simple example that showcases the differences between BM25 and TF-IDF in a more practical way. Suppose your query is "machine learning" and you have two documents with the following term counts, right? So, in document one it talks about learning a lot, but machine only appears once, and in document two you have learning and machine in roughly a similar range, but together they appear way less than learning in document one. And TF-IDF actually produces a higher score for document one, then documents two whereas being 25 with the default key hyperparameter, produces a higher score for document two than document one. And here, of course, this is only a very simplified example, and we don't know the document contents, but neither do the scoring models themselves, but we can assume here that document two is more relevant to the query machine learning because it contains more machine and learning together.  
+Now, let's look at a simple example that showcases the differences between BM25 and TF-IDF in a more practical way. Suppose your query is "machine learning" and you have two documents with the following term counts, right? So, in document one it talks about learning a lot, but machine only appears once, and in document two you have learning and machine in roughly a similar range, but together they appear way less than "learning" in document one. And TF-IDF actually produces a higher score for document one, then documents two whereas BM25 with the default K hyperparameter, produces a higher score for document two than document one. And here, of course, this is only a very simplified example, and we don't know the document contents, but neither do the scoring models themselves, but we can assume here that document two is more relevant to the query "machine learning" because it contains more machine and learning together.  
 
 *91.95 seconds*
 
 ### **42** Hyperparameters 
-The hyperparameters of BM25 are set by us, right? The developers, the practitioners, and K controls the term frequency scaling. If we set K to zero, it suddenly becomes a binary model and if we set K to a very large number, we basically look at any raw term frequency. And then the hyperparameters B controls the document length normalization, so zero again is no length normalization and set to one is only relative frequencies fully scaled by the document length. And of course, there are common and default ranges and if you tune those hyperparameters you can improve your results a bit for your specific test collection. But we also have to note that in general you can just take the default hyperparameters and BM25 will work fine.  
+The hyperparameters of BM25 are set by us, right? The developers, the practitioners, and K controls the term frequency scaling. If we set K to zero, it suddenly becomes a binary model and if we set K to a very large number, we basically look at any raw term frequency. And then the hyperparameter B controls the document length normalization, so zero again is no length normalization and set to one is only relative frequencies fully scaled by the document length. And of course, there are common and default ranges and if you tune those hyperparameters you can improve your results a bit for your specific test collection. But we also have to note that in general you can just take the default hyperparameters and BM25 will work fine.  
 
 *73.65 seconds*
 
@@ -223,7 +223,7 @@ The formula now looks like that, so we introduce this new stream length and stre
 *33.39 seconds*
 
 ### **45** BM25F   
-In BM25F we first combine the streams and then the terms, so this is different than just chaining together BM25 results on different streams. And the saturation function is applied at the stream level, so this follows the property that title, and body are not independent from each other, and they should not be treated as independent. And of course, their stream lengths and average stream lengths can vary quite a bit, and in most cases, you would assign a higher stream weight to a title or abstract for example. But again, those are weights that you can tune and do a hyperparameter search for your specific collection that you're using it in. 
+In BM25F we first combine the streams and then the terms, so this is different than just chaining together BM25 results on different streams. And the saturation function is applied at the stream level, so this follows the property that title and body are not independent from each other, and they should not be treated as independent. And of course, their stream lengths and average stream lengths can vary quite a bit. In most cases, you would assign a higher stream weight to a title or abstract for example. But again, those are weights that you can tune and do a hyperparameter search for your specific collection that you're using it in. 
 
 *62.37 seconds*
 
