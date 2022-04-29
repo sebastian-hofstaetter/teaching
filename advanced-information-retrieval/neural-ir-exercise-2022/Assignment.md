@@ -90,11 +90,11 @@ The data format for the FiRA data is as follows:
 
 **raw judgements format**
 
-``id	relevanceLevel	relevanceCharacterRanges	durationUsedToJudgeMs	judgedAtUnixTS	documentId	queryId	userId``
+``id	relevanceLevel	relevanceCharacterRanges	durationUsedToJudgeMs	judgedAtUnixTS	documentId	queryId	userId``  (separated by a tab)
 
 **qrels format**
 
-``queryid hardcoded-Q0 documentid relevance-grade``
+``queryid hardcoded-Q0 documentid relevance-grade``  (separated by a space)
 
 Text-based files are always: ``id text`` (separated by a tab)
 
