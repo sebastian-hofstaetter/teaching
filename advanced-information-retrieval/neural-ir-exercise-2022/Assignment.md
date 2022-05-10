@@ -33,7 +33,7 @@ Implement 3 neural architectures based on the kernel-pooling paradigm to perform
 	- MS-MARCO sparse labels
 	  - Use the **msmarco_tuples.test.tsv** input to feed the neural models and **msmarco_qrels.txt** qrels to evaluate the output
 	- FiRA-2022 fine-grained labels on out-of-domain data
-	  - Use your created created labels from part 1
+	  - Use your created labels from part 1
 	     - Use the **fira-2022.tuples.tsv** input to feed the neural models and your qrels from part 1 to evaluate the output
 	  - Compare these results with our baseline label creation method
 	     - Use the **fira-2022.tuples.tsv** input to feed the neural models and **fira-2022.baseline-qrels.tsv** qrels to evaluate the output
