@@ -33,7 +33,7 @@ Look how BERT can be used as a re-ranking model to drastically improve our searc
 *8.66 seconds*
 
 ### **7** Recall: BERT - Workflow 
-Let's recall the BERT Workflow from our Transformers lecture. So someone with lots of compute power and time to pre-train a large model creates this pre-trained model for us with Masked Language Modelling (MASK) and Next Sentence Prediction in the case of BERT. OK. So then once this model is trained we can download it for example the HuggingFace Model Hub and then fine-tune the BERT model on our task based on the pre-trained weights. 
+Let's recall the BERT Workflow from our Transformers lecture. So someone with lots of compute power and time to pre-train a large model creates this pre-trained model for us with Masked Language Modelling (MASK) and Next Sentence Prediction in the case of BERT. OK. So then once this model is trained we can download it for example via the HuggingFace Model Hub and then fine-tune the BERT model on our task based on the pre-trained weights. 
 
 *41.33 seconds*
 
