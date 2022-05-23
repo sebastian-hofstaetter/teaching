@@ -134,7 +134,7 @@ Other recurrent neural network architectures or flavors are the bidirectional RN
 *137.46 seconds*
 
 ### **27** Sequence In + Out Tasks 
-Well, so where can we actually apply RNNs? In every sequence-in and sequence-out tasks. So that means in translation, in question answering, in summarization, in email auto response, chat bots that describe how much they like cappuccino for some reason. Well, and one thing all those tasks having common is that solutions for each of the tasks influences the other tasks, and so the field can advance as a whole. 
+Well, so where can we actually apply RNNs? In every sequence-in and sequence-out tasks. So that means in translation, in question answering, in summarization, in email auto response, chat bots that describe how much they like cappuccino for some reason. Well, and one thing all those tasks have in common is that solutions for each of the tasks influences the other tasks, and so the field can advance as a whole. 
 
 *43.96 seconds*
 
