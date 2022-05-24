@@ -143,7 +143,7 @@ Then, after retrieving this ranked list of documents, we choose a cutoff point K
 *36.15 seconds*
 
 ### **29** Pooling Process (3/5)
-Then to create our pool, we remove duplicated entries, so this then actually makes pooling more annotation-efficient than simply relying on a single system at a time because we save a notation time by removing duplicates. And now, those query document pairs can all be annotated. 
+Then to create our pool, we remove duplicated entries, so this then actually makes pooling more annotation-efficient than simply relying on a single system at a time because we save annotation time by removing duplicates. And now, those query document pairs can all be annotated. 
 
 *26.77 seconds*
 
