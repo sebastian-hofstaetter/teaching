@@ -29,10 +29,10 @@ def calculate_metrics_plain(ranking, qrels, binarization_point=1.0, return_per_q
 
     ranked_queries = len(ranking)
     ap_per_candidate_depth = np.zeros(ranked_queries)
-    rr_per_candidate_depth = np.zeros(len(global_metric_config["MRR+Recall@"]), ranked_queries)
-    rank_per_candidate_depth = np.zeros(len(global_metric_config["MRR+Recall@"]), ranked_queries)
-    recall_per_candidate_depth = np.zeros(len(global_metric_config["MRR+Recall@"]), ranked_queries)
-    ndcg_per_candidate_depth = np.zeros(len(global_metric_config["nDCG@"]), ranked_queries)
+    rr_per_candidate_depth = np.zeros((len(global_metric_config["MRR+Recall@"]), ranked_queries))
+    rank_per_candidate_depth = np.zeros((len(global_metric_config["MRR+Recall@"]), ranked_queries))
+    recall_per_candidate_depth = np.zeros((len(global_metric_config["MRR+Recall@"]), ranked_queries))
+    ndcg_per_candidate_depth = np.zeros((len(global_metric_config["nDCG@"]), ranked_queries))
     evaluated_queries = 0
 
     for query_index, (query_id, ranked_doc_ids) in enumerate(ranking.items()):
