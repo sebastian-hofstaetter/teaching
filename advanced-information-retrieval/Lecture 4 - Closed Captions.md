@@ -8,7 +8,7 @@ Hello everyone, today we're going to take a look at our first machine learning c
 *12.38 seconds*
 
 ### **2** Today 
-We are going to look at two specific things. First, are word embeddings. So how we actually transform words as we see it from characters to vectors, so that neural networks can work with them. And there, very popular technique from the last years, is Word2Vec and we're going to take a look at that as well. Then, we're going to take a first glimpse at what you could do with word embeddings in the information retrieval setting and we're going to look at unsupervised query expansion and how our group actually solved a problem of topic shifting that occurred from pre-trained word embeddings. So without further ado, let's get started. 
+We are going to look at two specific things. First, are word embeddings. So how we actually transform words as we see it from characters to vectors, so that neural networks can work with them. And there, a very popular technique from the last years is Word2Vec and we're going to take a look at that as well. Then, we're going to take a first glimpse at what you could do with word embeddings in the information retrieval setting and we're going to look at unsupervised query expansion and how our group actually solved a problem of topic shifting that occurred from pre-trained word embeddings. So without further ado, let's get started. 
 
 *51.59 seconds*
 
