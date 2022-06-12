@@ -13,7 +13,7 @@ Our fundamentals talk today will look at 2 main aspects of traditional informati
 *38.73 seconds*
 
 ### **3** Information Retrieval 
-Information retrieval, in its most basic core concept, asks the question of a given query (in this example "Elephant weight"). How relevant is this query to a given document? Can we quantify this relevance? 
+Information retrieval, in its most basic core concept, asks the question of a given query (here in this example "Elephant weight"). How relevant is this query to a given document? Can we quantify this relevance? 
 
 *21.27 seconds*
 
