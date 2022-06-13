@@ -23,7 +23,7 @@ Now the problem is we don't actually have a single document, but potentially mil
 *28.49 seconds*
 
 ### **5** Notes on terminology 
-In this course and in this lecture specifically, we use the term 'documents' interchangeably for all kinds of different file formats, so this can be a web page, a word file, any text file and email, etc. and we assume it to be a simple text file without any markup, to make things easier. There are of course a lot of details to look out for in the real world, such as encoding, languages, hierarchies in different document fields, etc. A collection for us is a set of documents, and here in this lecture we assume it to be static to make again things easier. But of course, in the real world, you would need to be able to update those set of documents in a lot of scenarios. And then relevance is defined as: "Does a document satisfy the information need of a user, and does it help complete the users task?" 
+In this course and in this lecture specifically, we use the term 'documents' interchangeably for all kinds of different file formats, so this can be a web page, a word file, any text file and email, etc. and we assume it to be a simple text file without any markup, to make things easier. There are of course a lot of details to look out for in the real world, such as encoding, languages, hierarchies in different document fields, etc. A collection for us is a set of documents, and here, in this lecture, we assume it to be static to make again things easier. But of course, in the real world, you would need to be able to update those set of documents in a lot of scenarios. And then relevance is defined as: "Does a document satisfy the information need of a user, and does it help complete the users task?" 
 
 *76.83 seconds*
 
@@ -58,7 +58,7 @@ Let's look at each of these steps in a bit more details, starting with tokenizat
 *76.21 seconds*
 
 ### **12** Stemming 
-The next point is stemming. Here we reduce the terms to their roots, and we just chop off the end of a term. This of course is language dependent and does not work equally well across languages, but again, for English it's a pretty good baseline. In more advanced form is so called lemmatization, where we keep a dictionary to reduce variant forms to their base form. For example, "am, are, is" will all reduce to "be". Computationally, this of course is more expensive than a simple rule-based chopping off the end. 
+The next point is stemming. Here we reduce the terms to their roots, and we just chop off the end of a term. This of course is language dependent and does not work equally well across languages, but again, for English it's a pretty good baseline. In more advanced form is so called lemmatization, where we keep a dictionary to reduce variant forms to their base form. For example, "am", "are", "is" will all reduce to "be". Computationally, this of course is more expensive than a simple rule-based chopping off the end. 
 
 *58.21 seconds*
 
@@ -153,7 +153,7 @@ So, the term frequency is a measure of how often the term T appears in the docum
 *42.86 seconds*
 
 ### **31** Term Frequency & Logarithm 
-This logarithm-based dampening looks like that: On the X axis we have our raw term frequency and on the Y axis we have the output of either the raw count or the log dampened value, and you can see that in long documents where terms appear more often, potentially hundreds of times, the log based term frequency dampens this effect quite a bit, and retrieval experiments show that using this logarithm is more effective than just the raw counts. And a commonly used approach that we use here is to add 1 to the term frequency and then apply the logarithm. 
+This logarithm-based dampening looks like that: On the X axis we have our raw term frequency and on the Y axis we have the output of either the raw count or the log dampened value, and you can see that in long documents where terms appear more often, potentially hundreds of times, the log-based term frequency dampens this effect quite a bit, and retrieval experiments show that using this logarithm is more effective than just the raw counts. And a commonly used approach that we use here is to add 1 to the term frequency and then apply the logarithm. 
 
 *57.93 seconds*
 
@@ -173,7 +173,7 @@ TF-IDF just put together those two measures we just talked about. So, we have th
 *86.49 seconds*
 
 ### **35** TF-IDF – Usage 
-TF-IDF is not only useful as a standalone ranking model. But its weights can also be used as a base for many other retrieval models, such as the vector space model that works better with TF-IDF weights, and it's also useful in a generic word weighting context for many NLP tasks, so we can have a task agnostic importance of a word in a document in a collection. And we can of course assign every word in a collection its TF-IDF score. An example for that is again LSA (latent semantic analysis) that has been shown to work better if you utilized TF-IDF weights with it. 
+TF-IDF is not only useful as a standalone ranking model. But its weights can also be used as a base for many other retrieval models, such as the vector space model that works better with TF-IDF weights, and it's also useful in a generic word weighting context for many NLP tasks, so we can have a task agnostic importance of a word in a document in a collection. And we can of course assign every word in a collection its TF-IDF score. An example for that is again LSA (Latent Semantic Analysis) that has been shown to work better if you utilized TF-IDF weights with it. 
 
 *56.12 seconds*
 
