@@ -53,7 +53,7 @@ Let's talk about the recommended prerequisites, and I want to emphasize that the
 *106.81 seconds*
 
 ### **11** Some pointers to get you started … 
-And if you want to get started on some background, here are some pointers to get you started. There is a great book about neural network methods in NLP by Yoav Goldberg and it also contains a very good introduction to machine learning as well. If you want to have an overview of the strong improvements in the paradigm shift in IR, I can only recommend the recent survey paper by Jimmy Lin et al. about Bert and beyond in text ranking. And of course various tutorials sites. 
+And if you want to get started on some background, here are some pointers to get you started. There is a great book about neural network methods in NLP by Yoav Goldberg and it also contains a very good introduction to machine learning as well. If you want to have an overview of the strong improvements in the paradigm shift in IR, I can only recommend the recent survey paper by Jimmy Lin et al. about BERT and beyond in text ranking. And of course various tutorials sites. 
 
 *49.34 seconds*
 
@@ -93,7 +93,7 @@ Furthermore, we also have very well flowing transcripts and again our aim is to 
 *56.09 seconds*
 
 ### **19** Feedback 2021 - YouTube Usage 
-And we we did the same thing in 2021 and I just wanted to highlight what your colleagues from the year 2021 had to say about our use of YouTube. So they very much liked it and I hope that this continues again this year and the timeline feature was also very noticeable and 2/3 of students actively used it. So that's why we're going to continue to provide all materials in this way.
+And we did the same thing in 2021 and I just wanted to highlight what your colleagues from the year 2021 had to say about our use of YouTube. So they very much liked it and I hope that this continues again this year and the timeline feature was also very noticeable and 2/3 of students actively used it. So that's why we're going to continue to provide all materials in this way.
 
 *34.05 seconds*
 
