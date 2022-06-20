@@ -38,7 +38,7 @@ So in this domain, specific tasks have very different characteristics to web sea
 *168.34 seconds*
 
 ### **8** 
-We'll discuss the tasks which are there in medical domain. We will introduce some evalution campaigns and also some solutions in the medical domain how those tasks and problems are addressed. 
+We'll discuss the tasks which are there in medical domain. We will introduce some evaluation campaigns and also some solutions in the medical domain how those tasks and problems are addressed. 
 
 *13.33 seconds*
 
@@ -68,7 +68,7 @@ So the systematic reviews also underlie some legal requirements for the review a
 *101.26 seconds*
 
 ### **14** Clinical decision support 
-Another Information Retrieval task in the medical domain is clinical decision support and clinical decision support systems should provides clinicians, staff and also patients with knowledge, and they should also consider the patient specific information from the electronic health record of the patient and to generate with this patient specific information, specific case advice for the treatment of one patient and therefore the system should link health observations after patient together with health knowledge. So this is also an interesting information retrieval task, where you also need to consider patient specific information and also the current state of the research and combine this. So and now, after introducing the specific tasks which are there in the medical domain, we will go into some evalution campaigns. 
+Another Information Retrieval task in the medical domain is clinical decision support and clinical decision support systems should provide clinicians, staff and also patients with knowledge, and they should also consider the patient specific information from the electronic health record of the patient and to generate with this patient specific information, specific case advice for the treatment of one patient and therefore the system should link health observations after patient together with health knowledge. So this is also an interesting information retrieval task, where you also need to consider patient specific information and also the current state of the research and combine this. So and now, after introducing the specific tasks which are there in the medical domain, we will go into some evaluation campaigns. 
 
 *62.74 seconds*
 
@@ -103,7 +103,7 @@ A lot about applications in the medical domain. I also want to introduce you to 
 *14.02 seconds*
 
 ### **21** Different legal systems 
-So first about what you need to consider in the legal domain is that you have very different legal systems which vary a lot from nation to nation and broad overall you can say there are two systems:the statute law system and the case law system. In the statutes law, the statutes and legal regulatories are the primary information source, and therefore it is really important if you want to solve an new legal case that you find relevant statutes and legal regulatories to this case, and this system is mostly in European countries and different to this system there's the case law system where precedent cases so like prior cases which are already decided by court, are the primary source for legal evidence and not legal regulatories. So in those systems it is really important to find all the prior cases to your case which you want to solve. And this system mainly is in the Canada, in US or in Australia. 
+So first about what you need to consider in the legal domain is that you have very different legal systems which vary a lot from nation to nation and broad overall you can say there are two systems: the statute law system and the case law system. In the statutes law, the statutes and legal regulatories are the primary information source, and therefore it is really important if you want to solve an new legal case that you find relevant statutes and legal regulatories to this case, and this system is mostly in European countries and different to this system there's the case law system where precedent cases so like prior cases which are already decided by court, are the primary source for legal evidence and not legal regulatories. So in those systems it is really important to find all the prior cases to your case which you want to solve. And this system mainly is in the Canada, in US or in Australia. 
 
 *69.36 seconds*
 
